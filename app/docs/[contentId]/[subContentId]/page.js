@@ -1,13 +1,13 @@
 import ContentDisplay from '@/components/ContentDisplay';
 import React from 'react';
 
-const ContentPage = ({ params: { contentId } }) => {
+const SubContentPage = ({ params: { subContentId } }) => {
 
     return (
         <div>
-            <ContentDisplay id={contentId} />
+            <ContentDisplay id={subContentId} />
         </div>
     );
 };
 
-export default ContentPage;
+export default SubContentPage;
