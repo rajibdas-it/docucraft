@@ -9,7 +9,7 @@ const ContentDisplay = async ({ id }) => {
   //   console.log(documentContent);
 
   return (
-    <article class="prose dark:prose-invert">
+    <article className="prose dark:prose-invert">
       <h1>{documentContent.title}</h1>
       <div>
         <span>Published On: {documentContent.date}</span> by{" "}

@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
           <Header docs={allDocuments} />
           <div className="relative px-4 pt-14 sm:px-6 lg:px-8">
             <main className="flex-auto py-16">
-              <div class="absolute inset-0 -z-10 mx-0 max-w-none overflow-hidden">
+              <div className="absolute inset-0 -z-10 mx-0 max-w-none overflow-hidden">
                 <div
                   className="absolute left-1/2 top-0 ml-[-38rem] h-[25rem] w-[81.25rem] dark:[mask-image:linear-gradient(white,transparent)]"
                 >
