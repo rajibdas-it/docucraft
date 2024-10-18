@@ -3,8 +3,10 @@ import useDebounce from "@/hooks/useDebounce";
 import Image from "next/image";
 import React, { useState } from "react";
 import SearchResult from "./SearchResult";
+import { useRouter } from "next/navigation";
 
 const Search = ({ docs }) => {
+  const router = useRouter();
   const [searchResult, setSearchResult] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   // console.log(searchTerm);
@@ -22,7 +24,11 @@ const Search = ({ docs }) => {
     setSearchResult(founds);
   }, 500);
 
-  // console.log(searchResult);
+  const closeSearchResults = (e) => {
+    e.preventDefault();
+    router.push(e.target.href);
+    setSearchTerm("");
+  };
 
   return (
     <div className="relative hidden lg:block lg:max-w-md lg:flex-auto">
@@ -49,8 +55,12 @@ const Search = ({ docs }) => {
           <kbd className="font-sans">K</kbd>
         </kbd>
       </button>
-      {searchTerm && (
-        <SearchResult searchTerm={searchTerm} searchResult={searchResult} />
+      {searchTerm && searchTerm.trim().length > 0 && (
+        <SearchResult
+          searchTerm={searchTerm}
+          searchResult={searchResult}
+          closeSearchResults={closeSearchResults}
+        />
       )}
     </div>
   );

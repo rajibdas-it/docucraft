@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const SearchResult = ({ searchTerm, searchResult }) => {
+const SearchResult = ({ searchTerm, searchResult, closeSearchResults }) => {
   //   console.log(searchResult);
   return (
     <div className="absolute left-0 top-12 z-[999] w-full rounded-md bg-white p-4 shadow">
@@ -16,6 +16,7 @@ const SearchResult = ({ searchTerm, searchResult }) => {
               <Link
                 className="transition-all hover:text-emerald-600"
                 href={`/docs/${result.id}`}
+                onClick={(e) => closeSearchResults(e)}
               >
                 {result.title}
               </Link>
